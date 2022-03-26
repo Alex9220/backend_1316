@@ -41,7 +41,6 @@ public class PutProductTest {
         void putProductCategoryTest() throws IOException {
             Response<Product> response = productService.createProduct(product)
                     .execute();
-            assert response.body() != null;
             System.out.println(response.body().getId());
             id =  response.body().getId();
             Response<Product> response2 = productService.modifyProduct(product.withCategoryTitle("Food"), product.withId(id)).execute();

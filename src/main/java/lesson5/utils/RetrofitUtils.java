@@ -22,7 +22,7 @@ public class RetrofitUtils {
 
     static {
         try {
-            configFile = new FileInputStream("src/main/resources/com/geekbrains/test/my.properties");
+            configFile = new FileInputStream("src/main/resources/my.properties");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

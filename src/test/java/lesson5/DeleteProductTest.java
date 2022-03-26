@@ -40,7 +40,6 @@ public class DeleteProductTest {
         Response<Product> response = productService.createProduct(product)
                 .execute();
 //        System.out.println(response.body().getId());
-        assert response.body() != null;
         id =  response.body().getId();
         Response<ResponseBody> response2 = productService.deleteProduct(id).execute();
         assertThat(response2.isSuccessful(), CoreMatchers.is(true));

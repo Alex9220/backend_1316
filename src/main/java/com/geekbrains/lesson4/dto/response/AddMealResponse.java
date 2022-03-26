@@ -1,4 +1,4 @@
-package com.geekbrains.test.lesson4.dto.response;
+package com.geekbrains.lesson4.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
