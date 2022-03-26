@@ -20,5 +20,4 @@ public class AddMealResponse {
     @JsonProperty("id")
     public Integer id;
 
-
 }
