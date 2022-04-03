@@ -39,7 +39,7 @@ public class DeleteProductTest {
     void deleteProductInFoodCategoryTest() throws IOException {
         Response<Product> response = productService.createProduct(product)
                 .execute();
-//        System.out.println(response.body().getId());
+        System.out.println(response.body().getId());
         id =  response.body().getId();
         Response<ResponseBody> response2 = productService.deleteProduct(id).execute();
         assertThat(response2.isSuccessful(), CoreMatchers.is(true));
