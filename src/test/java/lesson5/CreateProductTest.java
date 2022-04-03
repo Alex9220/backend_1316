@@ -1,5 +1,6 @@
 package lesson5;
 
+import io.qameta.allure.junit5.AllureJunit5;
 import lesson5.api.ProductService;
 import lesson5.dto.Product;
 import lesson5.utils.RetrofitUtils;
@@ -41,9 +42,9 @@ public class CreateProductTest {
     void createProductInFoodCategoryTest() throws IOException {
         Response<Product> response = productService.createProduct(product)
                 .execute();
-        assert response.body() != null;
         id =  response.body().getId();
         assertThat(response.isSuccessful(), CoreMatchers.is(true));
+
     }
 
     @SneakyThrows
@@ -51,41 +52,8 @@ public class CreateProductTest {
     void tearDown() {
         Response<ResponseBody> response = productService.deleteProduct(id).execute();
         assertThat(response.isSuccessful(), CoreMatchers.is(true));
+
+
     }
 }
-/*
 
-    static ProductService productService;
-    Product product = null;
-    Faker faker = new Faker();
-    int id;
-
-    @BeforeAll
-    static void beforeAll() {
-        productService = RetrofitUtils.getRetrofit()
-                .create(ProductService.class);
-    }
-
-    @BeforeEach
-    void setUp() {
-        product = new Product()
-                .withTitle(faker.food().ingredient())
-                .withCategoryTitle("Food")
-                .withPrice((int) (Math.random() * 10000));
-    }
-
-    @Test
-    void createProductInFoodCategoryTest() throws IOException {
-        Response<Product> response = productService.createProduct(product)
-                .execute();
-        id =  response.body().getId();
-        System.out.println(id);
-        assertThat(response.isSuccessful(), CoreMatchers.is(true));
-    }
-
-    @SneakyThrows
-    @AfterEach
-    void tearDown() {
-        Response<ResponseBody> response = productService.deleteProduct(id).execute();
-        assertThat(response.isSuccessful(), CoreMatchers.is(true));
-    }*/

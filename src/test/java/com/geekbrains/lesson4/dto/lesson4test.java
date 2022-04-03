@@ -1,32 +1,25 @@
-package com.geekbrains.test.lesson4.dto;
+package com.geekbrains.lesson4.dto;
 
-import com.geekbrains.test.lesson4.dto.request.AddMealRequest;
-import com.geekbrains.test.lesson4.dto.response.AddMealResponse;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
-import io.restassured.mapper.ObjectMapper;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.hamcrest.Matchers;
 import org.json.JSONException;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
 
 
-public class lesson4 {
+class lesson4test {
     private static final String API_KEY = "93777889f8304e0ebc929326946a465e";
     private static RequestSpecification BASE_SPEC;
     private static ResponseSpecification RESPONSE_SPEC;
